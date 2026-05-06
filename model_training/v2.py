@@ -1,5 +1,5 @@
 
-# Defines number of epochs
+# 定义epoch循环次数(训练周期)
 n_epochs = 1000
 
 losses = []
@@ -9,18 +9,15 @@ for epoch in range(n_epochs):
     # inner loop
     mini_batch_losses = []
     for x_batch, y_batch in train_loader:
-        # the dataset "lives" in the CPU, so do our mini-batches
-        # therefore, we need to send those mini-batches to the
-        # device where the model "lives"
+        # 每次只上传一个minibatch到GPU
         x_batch = x_batch.to(device)
         y_batch = y_batch.to(device)
 
-        # Performs one train step and returns the corresponding loss 
-        # for this mini-batch
+        # 执行一次训练循环,记录损失
         mini_batch_loss = train_step_fn(x_batch, y_batch)
         mini_batch_losses.append(mini_batch_loss)
 
-    # Computes average loss over all mini-batches - that's the epoch loss
+    # 对每个minibatch取平均损失
     loss = np.mean(mini_batch_losses)
     
     losses.append(loss)

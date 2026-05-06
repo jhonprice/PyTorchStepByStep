@@ -3,6 +3,9 @@
 x_train_tensor = torch.from_numpy(x_train).float()
 y_train_tensor = torch.from_numpy(y_train).float()
 
+# 用dataset和dataloader准备数据代替手动散装传递
+# 而且能实现minibatch的训练
+
 # Builds Dataset
 train_data = TensorDataset(x_train_tensor, y_train_tensor)
 

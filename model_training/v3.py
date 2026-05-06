@@ -1,5 +1,6 @@
 
 # Defines number of epochs
+# 因为有内循环所以统一学习次数
 n_epochs = 200
 
 losses = []

@@ -17,6 +17,7 @@ for epoch in range(n_epochs):
         val_losses.append(val_loss)
     
     # Records both losses for each epoch under the main tag "loss"
+    # 在主标签“损失”下记录每个周期的损失
     writer.add_scalars(main_tag='loss',
                        tag_scalar_dict={'training': loss, 'validation': val_loss},
                        global_step=epoch)
