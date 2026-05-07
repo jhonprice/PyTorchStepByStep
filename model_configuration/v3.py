@@ -24,6 +24,6 @@ val_step_fn = make_val_step_fn(model, loss_fn)
 # Creates a Summary Writer to interface with TensorBoard
 writer = SummaryWriter('runs/simple_linear_regression')
 
-# Fetches a single mini-batch so we can use add_graph
+# 取单个小批量，以便可以使用add_graph
 x_sample, y_sample = next(iter(train_loader))
 writer.add_graph(model, x_sample.to(device))
