@@ -1,7 +1,9 @@
 
 # Defines number of epochs
+# 定义周期
 n_epochs = 1000
 
+# 更新参数
 for epoch in range(n_epochs):
     # Sets model to TRAIN mode
     model.train()
