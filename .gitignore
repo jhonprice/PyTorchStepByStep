@@ -135,3 +135,6 @@ model_checkpoint.pth
 
 /rps*
 /runtest/log*
+
+/runtest/rps*
+/runtest/runtest/log*
