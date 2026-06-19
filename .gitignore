@@ -132,3 +132,6 @@ dmypy.json
 /runs/
 
 model_checkpoint.pth
+
+/rps*
+/runtest/log*
